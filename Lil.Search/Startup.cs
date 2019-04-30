@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Lil.Search.Interfaces;
+using Lil.Search.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +28,11 @@ namespace Lil.Search
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddSingleton<ICustomersService, CustomersService>();
+            services.AddSingleton<IProductsService, ProductsService>();
+            services.AddSingleton<ISalesService, SalesService>();
+
 
             services.AddHttpClient("customersService", c =>
             {
@@ -57,7 +64,6 @@ namespace Lil.Search
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
             app.UseMvc();
         }
     }

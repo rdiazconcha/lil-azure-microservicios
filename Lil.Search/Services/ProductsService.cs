@@ -9,10 +9,10 @@ using Newtonsoft.Json;
 
 namespace Lil.Search.Services
 {
-    public class ProductsServices : IProductsService
+    public class ProductsService : IProductsService
     {
         private readonly IHttpClientFactory httpClientFactory;
-        public ProductsServices(IHttpClientFactory httpClientFactory)
+        public ProductsService(IHttpClientFactory httpClientFactory)
         {
             this.httpClientFactory = httpClientFactory;
         }
