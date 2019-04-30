@@ -37,6 +37,11 @@ namespace Lil.Search
                 c.BaseAddress = new Uri(Configuration["Services:Products"]);
             });
 
+            services.AddHttpClient("salesService", c =>
+            {
+                c.BaseAddress = new Uri(Configuration["Services:Sales"]);
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
