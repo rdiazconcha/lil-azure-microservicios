@@ -55,10 +55,10 @@ namespace Lil.Search.Controllers
 
                 return Ok(result);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                return StatusCode(502, ex.Message);
             }
         }
     }

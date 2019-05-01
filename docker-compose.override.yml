@@ -1,0 +1,32 @@
+version: '3.4'
+
+services:
+  lil.customers:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+  lil.products:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+
+  lil.sales:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+
+  lil.search:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - Services__Customers=http://lil.customers
+      - Services__Products=http://lil.products
+      - Services__Sales=http://lil.sales
+    ports:
+      - "80"
+
