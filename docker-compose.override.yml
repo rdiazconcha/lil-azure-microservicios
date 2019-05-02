@@ -24,9 +24,5 @@ services:
   lil.search:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - Services__Customers=http://lil.customers
-      - Services__Products=http://lil.products
-      - Services__Sales=http://lil.sales
-    ports:
-      - "80"
+
 

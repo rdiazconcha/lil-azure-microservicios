@@ -32,4 +32,10 @@ services:
     build:
       context: .
       dockerfile: Lil.Search/Dockerfile
+    ports:
+      - 9300:80
+    environment:
+      - Services__Customers=http://lil.customers
+      - Services__Products=http://lil.products
+      - Services__Sales=http://lil.sales
 
