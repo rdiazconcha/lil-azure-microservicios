@@ -4,10 +4,10 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
-COPY ["lil.sales/Lil.Sales.csproj", "lil.sales/"]
-RUN dotnet restore "lil.sales/Lil.Sales.csproj"
+COPY ["Lil.Sales/Lil.Sales.csproj", "Lil.Sales/"]
+RUN dotnet restore "Lil.Sales/Lil.Sales.csproj"
 COPY . .
-WORKDIR "/src/lil.sales"
+WORKDIR "/src/Lil.Sales"
 RUN dotnet build "Lil.Sales.csproj" -c Release -o /app
 
 FROM build AS publish
